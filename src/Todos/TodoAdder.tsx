@@ -7,8 +7,7 @@ export function TodoAdder(): JSX.Element {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    mutate(value);
-    setValue("");
+    mutate(value, { onSuccess: () => setValue("") });
   };
 
   return (
